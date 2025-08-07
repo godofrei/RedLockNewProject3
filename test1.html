@@ -1,87 +1,144 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html><html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Test 1 - Isagi mi, Rei mi?</title>
-  <style>
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      color: red;
-    }
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: yellow;
-      color: black;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 30px;
-      font-size: 20px;
-      color: #00ffcc;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 1 - Isagi mi, Rei mi?</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+        h1 {
+            color: #ff3333;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answers label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <h1>Test 1: Isagi mi, Rei mi?</h1>
-  <form id="testForm">
-    <div id="questions"></div>
-    <button type="button" class="button" onclick="calculateResult()">Sonucu Gör</button>
-  </form>
-  <div id="result"></div>
+    <h1>Test 1: Isagi mi, Rei mi?</h1>
+    <form id="quiz">
+        <!-- SORU 1 -->
+        <div class="question">
+            <p>1. Karar verirken neyi ön planda tutarsın?</p>
+            <div class="answers">
+                <label><input type="radio" name="q1" value="isagi"> Takım uyumu</label>
+                <label><input type="radio" name="q1" value="rei"> Kişisel zafer</label>
+            </div>
+        </div><!-- SORU 2 -->
+    <div class="question">
+        <p>2. Bir maçta yenildiğinde ne yaparsın?</p>
+        <div class="answers">
+            <label><input type="radio" name="q2" value="isagi"> Hataları analiz ederim</label>
+            <label><input type="radio" name="q2" value="rei"> Daha agresifleşirim</label>
+        </div>
+    </div>
 
-  <script>
-    const questions = [
-      "Lider mi olmayı seversin, stratejist mi?",
-      "Zeka mı önceliklidir, içgüdü mü?",
-      "Sessiz plan mı, ani saldırı mı?",
-      "Takım mı, bireysel başarı mı?",
-      "Sakinlik mi, tutku mu?",
-      "Düşmanına karşı duygusal mısın?",
-      "Oyun kurucu musun, bitirici mi?",
-      "Her şey planlı mı olmalı, doğaçlama mı?"
-    ];
+    <!-- SORU 3 -->
+    <div class="question">
+        <p>3. Bir takım lideri nasıl olmalı?</p>
+        <div class="answers">
+            <label><input type="radio" name="q3" value="isagi"> Destekleyici ve akıllı</label>
+            <label><input type="radio" name="q3" value="rei"> Sert ve hedef odaklı</label>
+        </div>
+    </div>
 
-    const container = document.getElementById("questions");
+    <!-- SORU 4 -->
+    <div class="question">
+        <p>4. En büyük motivasyonun nedir?</p>
+        <div class="answers">
+            <label><input type="radio" name="q4" value="isagi"> Takımı başarıya götürmek</label>
+            <label><input type="radio" name="q4" value="rei"> Zirvede yalnız olmak</label>
+        </div>
+    </div>
 
-    questions.forEach((q, index) => {
-      container.innerHTML += `
-        <p><strong>${index + 1}.</strong> ${q}</p>
-        <label><input type="radio" name="q${index}" value="rei" required> Rei gibi düşünürüm</label>
-        <label><input type="radio" name="q${index}" value="isagi"> Isagi gibi hissederim</label>
-      `;
-    });
+    <!-- SORU 5 -->
+    <div class="question">
+        <p>5. Oyundaki stilin hangisine daha yakın?</p>
+        <div class="answers">
+            <label><input type="radio" name="q5" value="isagi"> Stratejik</label>
+            <label><input type="radio" name="q5" value="rei"> Patlayıcı ve direkt</label>
+        </div>
+    </div>
 
+    <!-- SORU 6 -->
+    <div class="question">
+        <p>6. Takım arkadaşın hata yaptığında?</p>
+        <div class="answers">
+            <label><input type="radio" name="q6" value="isagi"> Destek olurum</label>
+            <label><input type="radio" name="q6" value="rei"> Umursamam, kendime bakarım</label>
+        </div>
+    </div>
+
+    <!-- SORU 7 -->
+    <div class="question">
+        <p>7. Taraftarlar seni nasıl tanısın isterdin?</p>
+        <div class="answers">
+            <label><input type="radio" name="q7" value="isagi"> Zeki oyun kurucu</label>
+            <label><input type="radio" name="q7" value="rei"> Gol makinesi</label>
+        </div>
+    </div>
+
+    <!-- SORU 8 -->
+    <div class="question">
+        <p>8. Zayıf yanlarınla nasıl başa çıkarsın?</p>
+        <div class="answers">
+            <label><input type="radio" name="q8" value="isagi"> Çalışarak aşarım</label>
+            <label><input type="radio" name="q8" value="rei"> Saklarım, kimse bilmesin</label>
+        </div>
+    </div>
+
+    <button type="button" onclick="calculateResult()">Sonucu Gör</button>
+</form>
+
+<div class="result" id="result"></div>
+
+<script>
     function calculateResult() {
-      const form = document.forms["testForm"];
-      let reiScore = 0;
-      let isagiScore = 0;
+        const form = document.forms['quiz'];
+        let isagi = 0;
+        let rei = 0;
 
-      for (let i = 0; i < questions.length; i++) {
-        const answer = form[`q${i}`].value;
-        if (answer === "rei") reiScore++;
-        else isagiScore++;
-      }
+        for (let i = 1; i <= 8; i++) {
+            const answer = form[`q${i}`].value;
+            if (answer === 'isagi') isagi++;
+            else if (answer === 'rei') rei++;
+        }
 
-      const resultText = reiScore > isagiScore
-        ? "Sen REI fanısın! Soğukkanlı, zeki ve lider ruhlusun."
-        : "Sen ISAGI fanısın! İçgüdüsel, kararlı ve duygusal bir savaşçısın.";
+        const resultText = document.getElementById('result');
 
-      document.getElementById("result").innerText = resultText;
+        if (isagi > rei) {
+            resultText.textContent = "Sen ISAGİ hayranısın! Takım ruhun ve zekânla öne çıkıyorsun.";
+        } else if (rei > isagi) {
+            resultText.textContent = "Sen REİ hayranısın! Gücün ve bireysel hırsın seni tanımlar.";
+        } else {
+            resultText.textContent = "Sen her ikisine de eşit hayransın!";
+        }
     }
-  </script>
+</script>
+
 </body>
 </html>
