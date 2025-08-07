@@ -34,7 +34,7 @@
       text-align: center;
       margin-top: 40px;
     }
-    .back-button {
+    .btn {
       background-color: #ff3399;
       color: #000;
       padding: 12px 24px;
@@ -43,13 +43,22 @@
       font-weight: bold;
       margin: 10px;
       display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+    #result {
+      text-align: center;
+      font-size: 22px;
+      margin-top: 20px;
+      color: #ffff00;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <h1>Test 3: Hangi Red Lock Karakterisin?</h1>
 
-  <form>
+  <form id="quizForm">
     <div class="question">
       <h2>1. Maçta bir fırsat kaçırırsan?</h2>
       <label><input type="radio" name="q1"> Kafama takarım ve analiz ederim</label>
@@ -100,7 +109,19 @@
   </form>
 
   <div class="button-area">
-    <a href="index.html" class="back-button">Başa Dön</a>
+    <button class="btn" onclick="showResult()">Hangi Karakter Olduğunu Gör</button>
+    <a href="index.html" class="btn">Başa Dön</a>
   </div>
+
+  <div id="result"></div>
+
+  <script>
+    function showResult() {
+      // Basit rastgele sonuç (isteğe bağlı geliştirilebilir)
+      const karakterler = ["Rei", "Isagi"];
+      const secilen = karakterler[Math.floor(Math.random() * karakterler.length)];
+      document.getElementById("result").textContent = `Sen ${secilen} gibisin!`;
+    }
+  </script>
 </body>
 </html>
