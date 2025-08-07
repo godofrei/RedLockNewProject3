@@ -1,85 +1,56 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html><html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Test 2 - Red Lock'a Alınır mıydın?</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Lock Test 2 - Alınır mıydın?</title>
   <style>
     body {
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
-      padding: 20px;
+      padding: 30px;
     }
     h1 {
-      color: red;
+      color: #ff3333;
+      text-align: center;
     }
-    label {
+    .question {
+      margin-bottom: 25px;
+    }
+    .question h3 {
+      margin-bottom: 10px;
+    }
+    .option {
       display: block;
       margin-bottom: 10px;
     }
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: yellow;
-      color: black;
-      font-weight: bold;
+    button {
+      background-color: #ffcc00;
+      color: #000;
       border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
+      display: block;
+      margin: 30px auto;
     }
     #result {
-      margin-top: 30px;
-      font-size: 20px;
-      color: #00ffcc;
+      text-align: center;
+      font-size: 22px;
       font-weight: bold;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>Test 2: Red Lock'a Alınır mıydın?</h1>
-  <form id="testForm">
-    <div id="questions"></div>
-    <button type="button" class="button" onclick="calculateResult()">Sonucu Gör</button>
-  </form>
-  <div id="result"></div>
-
-  <script>
-    const questions = [
-      "Baskı altında sakin kalabilir misin?",
-      "Yenildiğinde daha mı güçlü dönersin?",
-      "Yalnız başına mı daha iyisin, takımda mı?",
-      "Hedefin net mi yoksa değişken mi?",
-      "Kendini geliştirmeye takıntılı mısın?",
-      "Rakiplerine karşı acımasız olabilir misin?",
-      "Kuralları çiğnemeyi göze alır mısın?",
-      "Dünyanın en iyisi olmak istiyor musun?"
-    ];
-
-    const container = document.getElementById("questions");
-
-    questions.forEach((q, index) => {
-      container.innerHTML += `
-        <p><strong>${index + 1}.</strong> ${q}</p>
-        <label><input type="radio" name="q${index}" value="evet" required> Evet</label>
-        <label><input type="radio" name="q${index}" value="hayır"> Hayır</label>
-      `;
-    });
-
-    function calculateResult() {
-      const form = document.forms["testForm"];
-      let score = 0;
-
-      for (let i = 0; i < questions.length; i++) {
-        const answer = form[`q${i}`].value;
-        if (answer === "evet") score++;
-      }
-
-      const resultText = score >= 5
-        ? "🎉 SEN RED LOCK′A GİRMEYİ BAŞARDIN!"
-        : "❌ SEN RED LOCK′A GİRMEYİ BAŞARAMADIN.";
-
-      document.getElementById("result").innerText = resultText;
-    }
-  </script>
-</body>
-</html>
+  <h1>Red Lock Test 2: Red Lock'a Alınır mıydın?</h1>  <form id="quizForm">
+    <div class="question">
+      <h3>1. Kritik anlarda baskı altında nasıl tepki verirsin?</h3>
+      <label class="option"><input type="radio" name="q1" value="1"> Paniklerim ama toparlamaya çalışırım.</label>
+      <label class="option"><input type="radio" name="q1" value="2"> Sakin kalır ve soğukkanlı karar veririm.</label>
+    </div>
+    <div class="question">
+      <h3>2. Takım oyununda senin rolün nedir?</h3>
+      <label class="option"><input type="radio" name="q2" value="1"> Uyumluyum ama öne çıkmam.</label>
+      <label class="option"><input type="radio" name="q2" value="2
